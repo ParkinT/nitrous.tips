@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nitrous.Tips</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" media="all" href="css/navstyles.css" />
+<link rel="stylesheet" media="all" href="css/markdown.css" />
+</head>
+<body>
+ 
+    <!-- menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><ul>
+                <li><a href="http://www.youtube.com/embed/rWEKT1Kz1a4?autoplay=1" target="nitrous">Nitrous - An Introduction</a></li>
+                <li><a href="http://www.sitepoint.com/nitrous-io-heroku-perfect-pair/" target="nitrous">Nitrous &amp; Heroku: Perfect Pair</a></li>
+                <li><a href="http://www.sitepoint.com/nitrous-io-rails-development-cloud/" target="nitrous">Ruby-on-Rails Development</a></li>
+               <li><a class="current_nav" href="blocks.html" target="nitrous">Bl.ocks with Nitrous &amp; Gists</a></li>
+                <li><a href="phpmyadmin.html">PHPAdmin: Remote</a></li>
+                <li><a href="http://blog.nitrous.io/2014/05/05/customizing-box-start.html" title="The Nitrous Blog explains how to customize the way your Nitrous Box starts" target="_blank">Customize Nitrous Box Start</a></li>
+            </ul></li>
+            <hr />
+            <li><a class="starred" href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&utm_medium=copypaste&utm_campaign=referral" target="_blank">Get Nitrous Charged</a></li>
+        </ul>
+    </nav>
+ 
+    <!-- blocks -->
+    <article>
+ 
+<h1>Building Blocks&nbsp;<sup><a href="http://bl.ocks.org/ParkinT/81ab793512eebf19f24a" target="nitrous" title="This is derived from a Github Gist">Gist</a></sup></h1>
+<h2>Simple Gist-Based Websites</h2>
+<blockquote>
+<p>This is an adaptation of <a href="http://bost.ocks.org/mike/block/">this set of instructions</a>; making them <em>Nitrous-Charged</em>.</p>
+</blockquote>
+<p>The remainder of this article assumes you have created a FREE account at <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a>.</p>
+<h3>Create a Nitrous Box</h3>
+<p><img src="https://gist.githubusercontent.com/ParkinT/81ab793512eebf19f24a/raw/b4668c63d1017608e76f67a4c9868f3eca652664/Boxes_none.png" alt="Nitrous Boxes" /></p>
+<h5>Create a new box for Node.js</h5>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/3695a8d487bf0edfe4f3503054be1e0c3d9ed39d/Boxes_new_Nodejs.png" alt="Node.js Nitrous Box" /></p>
+<h5>Select a <em>Region</em> close to you. Be creative on the name.</h5>
+<h3>Install Apache</h3>
+<p>The Autoparts helps you quickly add features and services to your box.</p>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/79a32c9b3dfd92e4319c760a57ce32f41b5a0512/Autoparts_Menu.png" alt="Autoparts Menu" /></p>
+<h5>Select the <em>Autoparts</em> menu and choose <em>Manage Autoparts</em>.</h5>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/28bec05c80e33f438da8afb190e19fa2508fbb28/Autoparts_Packages.png" alt="Choose Manage Packages" /><br />There are dozens of available Packages and the library continues to grow.</p>
+<blockquote>
+<p>Anyone <a href="https://github.com/nitrous-io/autoparts/blob/master/docs/contributing.md">can contribute</a> a <strong>part</strong> to the Nitrous Autoparts </p>
+</blockquote>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/c416e7b03662a94dae69447154b59e2c81554f2e/Autoparts_apache.png" alt="Filter Packages to Apache" /></p>
+<p>Using the &#8216;Filter Packages&#8217; to limit the list. Enter &#8220;Apache&#8221;
+Then click the <strong>install</strong> button for <em>Apache Web Server&#8230;nitrous1</em>.</p>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/71191794734fbd7b52b1e6288d910607f4d6f77b/Autoparts_apache_install_completed.png" alt="Installing and provisioning Apache2" /></p>
+<p>When the installation is finished, click the <strong>Done</strong> button.  Be sure to click <strong>Start</strong> before <strong>Close</strong>.<br />
+<img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/faedba4827ebf197e9ff59b87d38938215602177/Autoparts_apache_START.png" alt="Start Apache2 Services" />
+<img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/4e10b1d2d663b7d1a776d3f4dfeff4fc95054f1c/Autoparts_apache_started.png" alt="Apache Started" /></p>
+<h3>Link <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> to your Github account</h3>
+<p>By clicking on the <em>Nitrous Guage</em> at the top of the <em>Boxes</em> screen, you can access the &#8220;Get More N20&#8221; screen. <strong>N20</strong> is the commodity that <em>fuels</em> your <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> account; it helps you increase the resources allocated to your box(es). There are many ways to increase the N20 on your account.<br />
+<img src="https://gist.githubusercontent.com/ParkinT/81ab793512eebf19f24a/raw/nitrous_connectToGithub.png" alt="Connect To Github" /></p>
+<p>Next you need to add the <a href="https://help.github.com/articles/generating-ssh-keys">SSH key</a> for this box in your <a href="http://github.com">Github</a> profile. But <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> has provided a simple &#8220;one-click&#8221; method to accomplish this.</p>
+<p>From the <em>Boxes</em> screen, open your box (by clicking on the title). Click on &#8220;Reveal Public Key&#8221;.<br />
+<img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/15da49a8f140481026969daf6ae42739fd2b525f/Boxes_addSSHkey.png" alt="Add SSH Key to Github" /><br />
+This reveals the contents of the server&#8217;s SSH [Public] key and you could copy it from here to paste anywhere. But by clicking the &#8220;Add to Github&#8221; link that has appeared - because you previously connected your Github account - the key is automatically added to your Github profile!<br />
+<img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/3a4205253cd674ff2879b5ccce1c5da639f084e7/Boxes_addedToGithub.png" alt="SSH Key Added To Github automatically" /></p>
+<p>Click the &#8220;IDE&#8221; button to return to your box.</p>
+<h3>Create a project directory</h3>
+<p>The apache server exists simply to aid the iterative process of building the project. It added its default <em>www</em> directory. Since you may wish to create multiple projects it is recommended you construct sub-directories in that location; one for each project. This means during the preview process you need to append the project directory in the URL.</p>
+<p><img src="https://gist.githubusercontent.com/ParkinT/81ab793512eebf19f24a/raw/www_new_folder.png" alt="Create a project directory" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="www_blocks.png" alt="Project directory" /></p>
+<h3>Initialize Git</h3>
+<p>The initial publishing and any future updates of the Gist will be performed with Git. A simple <code>git push</code> is all that is required.</p>
+<p>Git is already provisioned on every <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> box. It needs to be initialized for use on each project.
+Change Directory (cd) into the project and issue these commands:</p>
+<pre><code class="bash">
+  $ git init
+                                                                                                       
+  $ git config --global user.email &quot;you@example.com&quot;                                                      
+  $ git config --global user.name &quot;Your Name&quot;</code></pre>
+<p><img src="https://gist.github.com/ParkinT/81ab793512eebf19f24a/raw/a25d3575aaa4ce0b9a6075f63539b823904263d3/git_init_steps.png" alt="Initialize Git" /><br />Initialize Git because you will be using it to push to a gist.</p>
+<p>Now, you can verify the setup for Git and Github is correct and complete with this command:</p>
+<pre><code class="bash">$ ssh -T git@gisthub.com</code></pre>
+<p>The expected response is something like this:</p>
+<p><code>Hi Githubber! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<p>For reference, use the <a href="https://help.github.com/articles/generating-ssh-keys">Github instructions</a> for SSH Keys</p>
+<h3>Create the Data (content)</h3>
+<p>And now comes the fun part! In the project directory you created, construct the data for your Blocks Gist.</p>
+<p>To take advantage of Mike Bostock&#8217;s <a href="http://http://bl.ocks.org/">Bl.ocks.org</a> you need a landing page named <code>index.html</code>.</p>
+<p>In order to perform an initial &#8216;smoke test&#8217; just create an <em>index.html</em> page with the bare minimum content:</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;Half of Infinity&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1&gt;It Works!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>All references (to Images, CSS files or Javascript files) will be relative. If you are loading a common library (like JQuery) you <strong>may</strong> link to the online reference.</p>
+<p>Using the <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> &#8216;<em>Preview</em>&#8217; menu item you can test your work (remember, Apache is already running)</p>
+<h3>Install GistUp</h3>
+<p>Mike Bostock developed <a href="https://github.com/mbostock/gistup">GistUp</a>, which is a utility to create Gists from the command-line and then update them with a simple <code>git push</code> command.</p>
+<p>Since the <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous</a> box you created is preloaded with Node.js it has npm installed and configured for your use.</p>
+<p><code>npm install -g gistup</code> is all it takes.</p>
+<blockquote>
+<p>There are many <a href="https://github.com/mbostock/gistup#usage">additional options</a> in GistUp that are worth exploring</p>
+</blockquote>
+<h3>Making Gists</h3>
+<p>Armed with the confidence that all the pieces are in place, it is time to turn to the <strong>REAL</strong> task of creating some Gists!</p>
+<p>The default file - in a Bl.ock - is <code>index.html</code> so that should be your primary focus. It is a <strong>Landing Page</strong> for your Gist-Based Website.</p>
+<p>Adding images is something that can <strong>ONLY</strong> be accomplished with a Git Push. You can <em>upload</em> image files to the Nitrous](https://www.nitrous.io/join/E49oOOrie2w) box with the <strong>Upload</strong> button at the bottom of the File Explorer area.</p>
+<p>When you are satisfied with your work after the Edit - Preview - Update cycle, just call <code>gistup</code>.</p>
+<p>{You can include a <em>Description</em> for your Gist with the Git convention of adding <code>-m &quot;Description Text&quot;</code> to the <code>gistup</code> call}</p>
+<p>The first time you run <code>gistup</code> you will be required to set up a <a href="https://github.com/settings/applications">personal access token</a>. {The only required permission is &#8220;gist&#8221;, but I simply accept the defaults}</p>
+<pre><code class="bash">
+Enter personal access token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Reinitialized existing Git repository in /home/action/workspace/www/blocks/.git/
+[master (root-commit) d5e399c] Initial gistup commit.                                                              
+ 1 file changed, 5 insertions(+)                                                              
+ create mode 100644 index.html                                                              
+gist 11549774 created!</code></pre>
+<blockquote>
+<p>We setup the SSH keys in an earlier step so we can perform a <code>git push</code>. If, at this point, you are having touble refer to the <a href="https://github.com/mbostock/gistup#troubleshooting">gistup troubleshooting guide</a>.</p>
+</blockquote>
+<h4>Build &#8216;Blocks&#8217;</h4>
+<p>Utilize the gist number by adding it to this URL (along with your Github/Gist username):</p>
+<pre><code>http://bl.ocks.org/GITHUB_USER_NAME/11549774</code></pre>
+<p>This is the URL to view your work in Bl.ocks.org.</p>
+<p>Adding <code>raw/</code> just before the gist number will supress the display of the HTML source.</p>
+<h3>Making updates</h3>
+<pre><code class="bash">
+$  git commit -am &apos;Made some changes.&apos;
+$  git push
+</code></pre>
+<p>There are some <a href="http://bost.ocks.org/mike/block/#advanced">advanced features</a> of Bl.ocks.org to explore once you have a little practice.</p>
+<p>As you go through the Edit/Preview/Edit cycle you, if you need to start or stop the Apache server in Nitrous, use these commands:</p>
+<p>To start the Apache server:
+<code>$ parts start apache2</code></p>
+<p>To stop the Apache server:
+<code>$ parts stop apache2</code></p>
+<hr />
+<h3>E&nbsp;P&nbsp;I&nbsp;L&nbsp;O&nbsp;G&nbsp;U&nbsp;E</h3>
+<p>Best of luck in your future Gists, Bl.ocks and Websites.</p>
+<p><a href="http://bl.ocks.org/ParkinT/raw/81ab793512eebf19f24a/" target="_blank" title="View this as a Bl.ock">This Gist was constructed using the technique described here</a>. You may be confident in the fact that this process has been &#8216;field tested&#8217;.</p>
+  <footer>
+    <p>We want YOUR ideas, tips, tricks and shortcuts.  Submit an <a href="https://github.com/ParkinT/nitrous.tips/issues/new" target="github">idea</a> or a <a href="https://github.com/ParkinT/nitrous.tips/fork" target="github">Pull Request</a> for inclusion on this site.<p style="padding-left: 60%;">This site is <a href="https://www.nitrous.io/hack_button?source=embed&runtime=rails&repo=ParkinT%2Fnitrous.tips.git" target="_blank"><img src="https://gist.githubusercontent.com/ParkinT/22e59e6b450d4694431a/raw/d2bde10f78da6fd5b438f0cb726b09f527d48bbf/NitrousCharged.png" /></a>!</p>
+</footer>
+   </article>
+ 
+</body>
+</html>

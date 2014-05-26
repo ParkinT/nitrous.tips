@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nitrous.Tips</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" media="all" href="css/navstyles.css" />
+<link rel="stylesheet" media="all" href="css/markdown.css" />
+</head>
+<body>
+ 
+   <!-- menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><ul>
+                <li><a href="http://www.youtube.com/embed/rWEKT1Kz1a4?autoplay=1" target="nitrous">Nitrous - An Introduction</a></li>
+                <li><a href="http://www.sitepoint.com/nitrous-io-heroku-perfect-pair/" target="nitrous">Nitrous &amp; Heroku: Perfect Pair</a></li>
+                <li><a href="http://www.sitepoint.com/nitrous-io-rails-development-cloud/" target="nitrous">Ruby-on-Rails Development</a></li>
+                <li><a href="blocks.html" target="nitrous">Bl.ocks with Nitrous &amp; Gists</a></li>
+                <li><a class="current_nav" href="phpmyadmin.html">PHPAdmin: Remote</a></li>
+                <li><a href="http://blog.nitrous.io/2014/05/05/customizing-box-start.html" title="The Nitrous Blog explains how to customize the way your Nitrous Box starts" target="_blank">Customize Nitrous Box Start</a></li>
+            </ul></li>
+            <hr />
+            <li><a class="starred" href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&utm_medium=copypaste&utm_campaign=referral" target="_blank">Get Nitrous Charged</a></li>
+        </ul>
+    </nav>
+
+     <!-- phpmyadmin -->
+    <article>
+
+ <h1>PHPMyAdmin Remote with Nitrous&nbsp;<sup><a href="https://gist.github.com/ParkinT/22e59e6b450d4694431a" target="nitrous" title="This is derived from a Github Gist">Gist</a></sup></h1>
+
+<p>Recently, I needed to make changes to a MySQL database on a deployed application. My development setup is on a <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> box but I found it necessary to make a quick surgical edit of the database {the client had messed up an input and it was easiest to simply edit the record&#8217;s association}.</p>
+
+<p>Installing PHPMyAdmin on the production server was impossible and would pose a very <strong>serious</strong> security risk. So, I wondered how difficult it would be to use my favorite development tool - <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> - to accomplish my <em>Remote MySQL access</em>.</p>
+
+<p>As it turns out, it is not too tough at all.
+In case you find yourself in a similar situation, I have worked it out and provide all the details here.</p>
+
+<p>The <strong>Autoparts</strong> is probably my favorite feature of <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a>. It allows you to install and provision dozens of useful utilties (beyond the hefty toolchain that is already provided with every <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> box).
+Begin this process by installing PHPMyAdmin by way of Autoparts.</p>
+
+<blockquote>
+  <p>From the Autoparts menu select <em>Manage Packages&#8230;</em><br />
+    Then enter &#8216;phpmy&#8217; into the <em>Filter Packages</em> field<br />
+Click <em>Install</em> on the &#8220;phpMyAdmin 4.1.7&#8221; (It should be the <strong>only</strong> choice)</p>
+</blockquote>
+
+<p>As instructed, you must immediately provide a username/password for PHPMyAdmin <code>mysqladmin -u user password</code></p>
+
+<p>In the workspace directory you will see <code>www/phpadmin</code></p>
+
+<p>The <code>config.inc.php</code> is the configuration file. That is where you must add the particluars of any remote MySQL instances you wish to access.
+The <em>user</em> and <em>password</em> you enter here must also be added to the Database PRIVILEDGES (see #2 below)</p>
+
+<p>For my <a href="https://www.digitalocean.com/?refcode=ad30861cee8b">Digital Ocean Droplet</a> (that has a Ruby-on-Rails application running with MySQL) I had to also perform the following steps.</p>
+
+<p>Over SSH, on my host (Droplet) I edited the <code>/etc/mysql/my.cnf</code> file
+<ol>
+<li>Remark the line <code>bind-address  = 127.0.0.1</code></li>
+<li>Grant permissions to myself as a user on the database in MySQL <code>GRANT ALL ON database_name.* TO 'user'@'ec2-54-235-221-217.compute-1.amazonaws.com' IDENTIFIED BY 'your_password';</code> and then <code>FLUSH PRIVILEGES;</code> I think you need to restart the MySQL server ``</li>
+<li>Verify MySQL is listening on port 3306 with <code>netstat -plutn</code></li>
+</ol>
+  </p>
+<p>When you select <em>Preview</em> on your <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> box you will see the <code>PHPMyAdmin</code> directory. Clicking on it activates the utility.
+In the selection of &#8220;Servers&#8221; you should see the new remote server. Select it and begin MySQL Administration!</p>
+
+<p>From now on the MySQL and Apache daemons will be running on this <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> box. If you want to use the <a href="https://www.nitrous.io/join/E49oOOrie2w">Nitrous.IO</a> box for other development you need to <em>selectively</em> activate and deactivate the PHPMyAdmin services.</p>
+
+<blockquote>
+<p>Use <code>apachectl stop</code> and <code>apachectl start</code></p>
+</blockquote>
+
+<p>If you find improvements or updates please submit a <a href="https://www.nitrous.io/hack_button?source=embed&runtime=php&repo=ParkinT%2F22e59e6b450d4694431a&file_to_open=NitrousPHPAdminRemote.md" style="border:0;text-decoration:none"><img src="https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-s-v1-7475db0cf93fe5d1e29420c928ebc614.png" alt="Update this Gist on Nitrous.IO" /></a> Pull Request.</p>
+
+
+  <footer>
+    <p>We want YOUR ideas, tips, tricks and shortcuts.  Submit an <a href="https://github.com/ParkinT/nitrous.tips/issues/new" target="github">idea</a> or a <a href="https://github.com/ParkinT/nitrous.tips/fork" target="github">Pull Request</a> for inclusion on this site.<p style="padding-left: 60%;">This site is <a href="https://www.nitrous.io/hack_button?source=embed&runtime=rails&repo=ParkinT%2Fnitrous.tips.git" target="_blank"><img src="https://gist.githubusercontent.com/ParkinT/22e59e6b450d4694431a/raw/d2bde10f78da6fd5b438f0cb726b09f527d48bbf/NitrousCharged.png" /></a>!</p>
+</footer>
+
+</article>
+</body>
+</html>
