@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nitrous.Tips</title>
+  <meta name="description" content="Nitrous.tips is dedicated to providing useful aids, shortcuts, tips and ideas to better help you while using Nitrous.IO" >
+  <meta name="author" content="Thom Parkin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="canonical" href="http://nitrous.tips">
+  <meta name="robots" content="noindex,nofollow">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" media="all" href="navstyles.css" />
+<link rel="stylesheet" media="all" href="markdown.css" />
+</head>
+<body>
+ 
+   <!-- menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><ul>
+                <li><a href="intro.html" target="nitrous">Nitrous - An Introduction</a></li>
+                <li><a href="perfectpair.html">A Perfect Pair</a></li>
+                <li><a href="railsdevelopment.html">Ruby-on-Rails Development</a></li>
+                <li><a href="blocks.html" target="nitrous">Bl.ocks with Nitrous &amp; Gists</a></li>
+                <li><a href="phpmyadmin.html">PHPAdmin: Remote</a></li>
+                <li><a href="http://blog.nitrous.io/2014/05/05/customizing-box-start.html" title="The Nitrous Blog explains how to customize the way your Nitrous Box starts" target="_blank">Customize Nitrous Box Start</a></li>
+                <li><a class="current_nav" href="net-ssh_error.html" target="nitrous"></a></li>
+            </ul></li>
+            <hr />
+            <li><a class="starred" href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&utm_medium=copypaste&utm_campaign=referral" target="_blank">Get Nitrous Charged</a></li>
+        </ul>
+      <a href="http://mbsy.co/6W9HQ" target="_blank" style="outline:none;border:none;"><img src="https://ambassador-api.s3.amazonaws.com/files/970_May_12_2014_20_04_48.gif" alt="Code School" border="0" /></a>
+    </nav>
+
+     <!-- net-ssh error -->
+    <article>
+
+      <h1> Cap Deploy rollback on Net::SSH::Authentication error </h1>
+<p>I use <a href="https://www.nitrous.io/join/E50oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a> as my primary development environment.  The ability to work <strong>on any</strong> one of a number of projects at <strong>any time</strong> and <strong>from anywhere</strong> is simply too convenient to overlook.  <span style="font-size:75%;">{As a matter of fact, I am writing this <strong>on a Nitrous box</strong> from a hospital bed!}</span></p>
+<p>On <a href="http://f1topten.com">a site</a> I have been maintaining and continuously updating (on a <code>drogo - Ruby/Rails</code> Nitrous box), my capistrano deploy script failed one day.</p>
+<blockquote>
+<p>One day my Capistrano deploy for the site returned <code>[deploy:update_code] exception while rolling back: Capistrano::ConnectionError, connection failed for: ...</code></p>
+</blockquote>
+<p>The error message was a bit confusing because it pointed to SSH authentication for my deploy user; with which I could easily connect from the <a href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a> console command line.</p>
+<p>A bit of digging on the Interent revealed this was a problem that crops up when the <code>net-ssh</code> gem is updated.  I was suddenly running <code>net-ssh 2.9.1</code> but this problem with capistrano will be resolved if I run <code>net-ssh version 2.7</code>.</p>
+<p>On my <a href="https://www.digitalocean.com/?refcode=ad30861cee8b">Digital Ocean Droplet</a> I then had to realign a few other gems.
+  I uninstalled and reinstalled with specific versions the following:</p>
+    <ul>
+  <li>net-ssh -v 2.9.2</li>
+  <li>net-scp -v 1.2.1</li>
+  </ul>
+<p>And my rake needed to be updated to 10.3.2</p>
+<p>I hope this will help you if you found this during a <a href="https://www.google.com/search?q=%5Bdeploy%3Aupdate_code%5D+exception+while+rolling+back%3A+Capistrano%3A%3AConnectionError%2C+connection+failed+for%3A&amp;rlz=1CAACAG_enUS566US566&amp;oq=%5Bdeploy%3Aupdate_code%5D+exception+while+rolling+back%3A+Capistrano%3A%3AConnectionError%2C+connection+failed+for%3A&amp;aqs=chrome..69i57.1308j0j4&amp;sourceid=chrome&amp;es_sm=93&amp;ie=UTF-8">frustrated Internet search</a>.</p>
+
+</body></html>
+  <footer>
+    <p>We want YOUR ideas, tips, tricks and shortcuts.  Submit an <a href="https://github.com/ParkinT/nitrous.tips/issues/new" target="github">idea</a> or a <a href="https://github.com/ParkinT/nitrous.tips/fork" target="github">Pull Request</a> for inclusion on this site.<p style="padding-left: 60%;">This site is <a href="https://www.nitrous.io/hack_button?source=embed&runtime=rails&repo=ParkinT%2Fnitrous.tips.git" target="_blank"><img src="https://gist.githubusercontent.com/ParkinT/22e59e6b450d4694431a/raw/d2bde10f78da6fd5b438f0cb726b09f527d48bbf/NitrousCharged.png" /></a>!</p>
+</footer>
+
+</article>
+</body>
+</html>
