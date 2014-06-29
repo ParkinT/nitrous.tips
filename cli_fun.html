@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Nitrous.Tips</title>
+  <meta name="description" content="Nitrous.tips is dedicated to providing useful aids, shortcuts, tips and ideas to better help you while using Nitrous.IO" >
+  <meta name="author" content="Thom Parkin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="canonical" href="http://nitrous.tips">
+  <meta name="robots" content="noindex,nofollow">
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" media="all" href="navstyles.css" />
+</head>
+<body>
+ 
+    <!-- menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><ul>
+                <li><a href="intro.html">Nitrous - An Introduction</a></li>
+                <li><a href="perfectpair.html">A Perfect Pair</a></li>
+                <li><a href="railsdevelopment.html">Ruby-on-Rails Development</a></li>
+               <li><a href="blocks.html" target="nitrous">Bl.ocks with Nitrous &amp; Gists</a></li>
+                <li><a href="phpmyadmin.html">PHPAdmin: Remote</a></li>
+                <li><a class="current_nav" href="cli_fun.html">Fun with the Linux CLI</a></li>
+                <li><a href="perfectpair.html">A Perfect Pair</a></li>
+                <li><a href="http://blog.nitrous.io/2014/05/05/customizing-box-start.html" title="The Nitrous Blog explains how to customize the way your Nitrous Box starts" target="_blank">Customize Nitrous Box Start</a></li>
+              <li><a href="net-ssh_error.html" target="nitrous">Capistrano Net-SSH Error</a></li>
+            </ul></li>
+            <hr />
+            <li><a class="starred" href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&utm_medium=copypaste&utm_campaign=referral" target="_blank">Get Nitrous Charged</a></li>
+        </ul>
+      <a href="http://mbsy.co/6W9HQ" target="_blank" style="outline:none;border:none;"><img src="https://ambassador-api.s3.amazonaws.com/files/970_May_12_2014_20_04_48.gif" alt="Code School" border="0" /></a>
+    </nav>
+ 
+    <!--Fun with Linux CLI -->
+    <article>
+<h1 id="fun-with-the-command-line">Fun with the Command Line</h1> <p>If you are a true fan of <a href="http://en.wikipedia.org/wiki/Star_Wars_(film)">Star Wars</a> you will find yourself &#39;reliving&#39; your first viewing of Episode IV when you try <a href="#starwars">the first experiment here</a>.</p> <blockquote> <p>I was there, in 1977, for the preview of (what was known only as &quot;Star Wars&quot; at the time). {I have a photo of me with my friends under the marquee at the Loews Astor Plaza in New York}</p></blockquote> <p>This is a collection of simple Linux CLI tricks and quirks.  Although they <em>may</em> work equally well on any Linux distribution, I have tested on my <a href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a> box with positive results.  Another <strong>great</strong> reason for using <a href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a> is that <strong>YOUR MILEAGE WILL <u>CERTAINLY NOT</u> VARY</strong>!</p> <h4 id="for-all-of-these,-open-the-console-to-full-screen-in-nitrous">For all of these, open the <em>Console</em> to full-screen in <a href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a></h4>  <hr> <p><a name="starwars"><h4>The Original Hope</h4></a> Get a bowl of popcorn and type this at the command prompt:</p><div class="highlight"><pre><span class="n">telnet</span> <span class="n">towel</span><span class="p">.</span><span class="n">blinkenlights</span><span class="p">.</span><span class="n">nl</span> </pre></div><p>If you do not wish to watch <strong>The Entire Movie</strong> you can use Ctrl+] to break then type ‘quit`</p> <hr> <p><a name="reverse"><h4>ESREVER</h4></a> At the command prompt type <code>rev</code><br /> Anything you type next will be reversed. Use Ctrl+c to stop it</p> <hr> <p><a name="factor"><h4>[Re]Factor</h4></a> At the command prompt type <code>factor</code><br /> Any number you type will be repeated with all its factors</p><p>Use Ctrl+c to stop it</p> <hr> <p><a name="times"><h4>Back To School</h4></a></p><p>Enter this one-line script at the command prompt</p><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="p">{</span><span class="mf">1..12</span><span class="p">};</span> <span class="k">do</span> <span class="k">for</span> <span class="n">j</span> <span class="n">in</span> <span class="err">$</span><span class="p">(</span><span class="n">seq</span> <span class="mi">1</span> <span class="err">$</span><span class="n">i</span><span class="p">);</span> <span class="k">do</span> <span class="n">echo</span> <span class="o">-</span><span class="n">ne</span> <span class="err">$</span><span class="n">i</span><span class="err">\</span><span class="o">*</span><span class="err">$</span><span class="n">j</span><span class="o">=</span><span class="err">$</span><span class="p">((</span><span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">))</span><span class="err">\\</span><span class="n">t</span><span class="p">;</span><span class="n">done</span><span class="p">;</span><span class="n">echo</span><span class="p">;</span><span class="n">done</span> </pre></div> <blockquote> <p>For &#39;old folks&#39; like me, this immediately brings memories of <a href="https://www.youtube.com/watch?v=fXi3bjKowJU">chanting in a classroom</a>.</p></blockquote>  <hr> <p><a name="fandom"><h4>Affirmative, Indeed</h4></a></p><p>At the command prompt type <code>yes I think Nitrous.IO is AWESOME</code></p><p>Try this too: <code>yes I \&lt;3 Nitrous.IO</code></p><p>Use Ctrl+c to stop (it takes a few seconds to respond)</p> <hr> <p><a name="tweetit"><h4>Tweet It</h4></a></p><p>You can send a quick <a href="https://twitter.com/ParkinT">Tweet</a> from the Command Line like this</p><p><code>url -u TwitterUsername:TwitterPassword -d status=“This Tweet was sent from the command line in a @Nitrous.IO box.  Check out Nitrous.tips for details” http://twitter.com/statuses/update.xml</code></p> <hr>  <h4 id="more,-just-for-fun">More, just for fun</h4> <p>Try these simple &quot;conversations&quot; with the <a href="https://www.nitrous.io/join/E49oOOrie2w?utm_source=nitrous.io&amp;utm_medium=copypaste&amp;utm_campaign=referral">Nitrous</a> box.</p><p>At the command prompt:</p><p><code>$ !:say, What is saccharine?</code></p><p><code>$ [ whereas my brain?</code></p><p><code>$ ^How did the sex change operation go?^</code></p>
+ 
+ <footer>
+    <p>&copy;2014 WebSembly, LLC&nbsp;&nbsp;all rights reserved.</p>
+</footer>
+    </article>
+ 
+</body>
+</html>
